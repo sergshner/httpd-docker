@@ -8,6 +8,8 @@ RUN [ -d /var/log/httpd ] || mkdir /var/log/httpd
 RUN [ -d /var/run/httpd ] || mkdir /var/run/httpd
 RUN [ -d /var/lock/httpd ] || mkdir /var/lock/httpd
 
+RUN chown -R apache:apache /var/log/httpd
+
 ENV APACHE_RUN_USER apache
 ENV APACHE_RUN_GROUP apache
 ENV APACHE_LOG_DIR /var/log/httpd
