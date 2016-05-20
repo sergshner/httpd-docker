@@ -15,6 +15,8 @@ ENV APACHE_LOCK_DIR /var/lock/httpd
 ENV APACHE_RUN_DIR /var/run/httpd
 ENV APACHE_PID_FILE /var/run/httpd/httpd.pid
 
+VOLUME /var/log/httpd
+
 EXPOSE 80
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
